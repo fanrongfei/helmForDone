@@ -18,7 +18,7 @@ Example:
     namespace: namespace-name
     timeout: 20m
     helm_repos:
-      - myrepo=http://10.10.10.21:8090/chartrepo/helm=admin=Originqc20170911=yes(添加自己的私有库)
+      - myrepo=http://127.0.0.1:8080/chartrepo/helm=admin=123456=yes(添加自己的私有库)
     envsubst: true
     values:
       - app.environment=awesome
