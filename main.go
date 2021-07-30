@@ -64,7 +64,6 @@ type (
 )
 
 func main() {
-	//jkfjajfjajl
 	// lookup env file if specified
 	envFile, ok := os.LookupEnv("PLUGIN_ENV_FILE")
 	if ok {
