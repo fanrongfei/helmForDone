@@ -1,0 +1,28 @@
+kind: pipeline
+name: default
+
+steps:
+- name: test
+  image: golang:1.14
+  commands:
+    - go build
+- name: docker
+  image: plugins/docker:18.09
+  settings:
+    dockerfile: ./Dockerfile
+    registry: 10.10.10.21:8090
+    repo: 10.10.10.21:8090/common/origin/drone-helm3
+    tags:
+      - v1.1
+    insecure: true
+    username:
+      from_secret: hub_name
+    password:
+      from_secret: hub_password
+
+trigger:
+  branch:
+    - dev
+  event:
+    - push
+
